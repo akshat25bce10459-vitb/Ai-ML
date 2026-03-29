@@ -1,33 +1,53 @@
-import streamlit as st
-from planner import create_schedule
-import matplotlib.pyplot as plt
+import pickle
+import os
 
-st.title(" Smart Study Planner (AI Based)")
-subjects = []
-n = st.number_input("Number of subjects", 1, 5)
+if not os.path.exists("model.pkl") or not os.path.exists("vectorizer.pkl"):
+    import train  
 
-for i in range(n):
-    st.subheader(f"Subject {i+1}")
-
-    name = st.text_input(f"Name {i+1}")
-    difficulty = st.slider(f"Difficulty {i+1}", 1, 5)
-    days = st.number_input(f"Days left {i+1}", 1, 30)
-    subjects.append((name, difficulty, days))
-
-if st.button("Generate Plan"):
-    schedule = create_schedule(subjects)
-
-    if len(schedule) == 0:
-        st.warning("Enter at least one subject")
+model = pickle.load(open("model.pkl", "rb"))
+vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
+def detect_issue(text):
+    text = text.lower()
+    if "fast" in text:
+        return "Speed", "Reduce teaching pace"
+    elif "difficult" in text or "confusing" in text:
+        return "Difficulty", "Simplify explanations"
+    elif "clear" in text:
+        return "Clarity", "Maintain clarity"
+    elif "excellent" in text or "good" in text:
+        return "Positive Feedback", "Keep up the good work"
     else:
-        st.subheader(" Study Plan")
+        return "General", "Improve engagement"
+        
+print("Choose input method:")
+print("1. Type your own feedback")
+print("2. Select from options")
+choice = input("Enter choice: ")
 
-        for s in schedule:
-            st.write(f" {s[0]} → Priority: {round(s[3],2)}")
-        names = [s[0] for s in schedule]
-        priorities = [s[3] for s in schedule]
-        plt.figure()
-        plt.bar(names, priorities)
-        plt.xlabel("Subjects")
-        plt.ylabel("Priority")
-        st.pyplot(plt)
+options = {
+    "1": "Teacher is too fast",
+    "2": "Class is confusing",
+    "3": "Teaching is excellent",
+    "4": "Subject is difficult"
+}
+if choice == "2":
+    print("\nOptions:")
+    for k, v in options.items():
+        print(f"{k}. {v}")
+    opt = input("Select option: ")
+    feedback = options.get(opt, "Average class")
+else:
+    feedback = input("Enter your feedback: ")
+
+vec = vectorizer.transform([feedback])
+prediction = model.predict(vec)[0]
+prob = max(model.predict_proba(vec)[0])
+
+issue, suggestion = detect_issue(feedback)
+
+print("\n-RESULT")
+print("Feedback:", feedback)
+print("Sentiment:", prediction)
+print("Confidence:", round(prob, 2))
+print("Issue:", issue)
+print("Suggestion:", suggestion)    
