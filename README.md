@@ -1,14 +1,12 @@
-# 📚 AI-Based Smart Study Planner
+# AI-Based Smart Study Planner
 
-## 🚀 Overview
+##  Overview
 
 The **AI-Based Smart Study Planner** is a machine learning project designed to help students organize their study schedule efficiently. It predicts the priority of subjects based on their difficulty and deadlines, and generates an optimized study plan.
 
 This project applies concepts from Artificial Intelligence and Machine Learning to solve a real-world problem of time management.
 
----
-
-## ❗ Problem Statement
+## Problem Statement
 
 Students often struggle with:
 
@@ -18,19 +16,14 @@ Students often struggle with:
 
 This project provides an intelligent solution that automatically generates a study plan based on user inputs.
 
----
-
-## 🎯 Features
-
+##  Features
 * Input multiple subjects with difficulty and deadlines
 * Predict subject priority using Machine Learning
 * Generate optimized study schedule
 * Display results in sorted order
 * Visualize priorities using graphs
 
----
-
-## 🧠 Technologies Used
+##  Technologies Used
 
 * Python
 * Pandas
@@ -38,9 +31,7 @@ This project provides an intelligent solution that automatically generates a stu
 * Streamlit
 * Matplotlib
 
----
-
-## 📂 Project Structure
+## Project Structure
 
 ```
 Smart-Study-Planner/
@@ -52,25 +43,22 @@ Smart-Study-Planner/
 ├── requirements.txt
 └── README.md
 ```
+##  Installation & Setup
 
----
-
-## ⚙️ Installation & Setup
-
-### 1. Clone the Repository
+ 1. Clone the Repository
 
 ```
 git clone https://github.com/your-username/smart-study-planner.git
 cd smart-study-planner
 ```
 
-### 2. Install Dependencies
+ 2. Install Dependencies
 
 ```
 pip install -r requirements.txt
 ```
 
-### 3. Run the Application
+ 3. Run the Application
 
 ```
 streamlit run app.py
@@ -82,45 +70,24 @@ streamlit run app.py
 <img width="322" height="809" alt="Screenshot 2026-03-28 210605" src="https://github.com/user-attachments/assets/d94e750a-6b34-45de-9450-1746b4585c26" />
 
 
----
-
-## 🧩 Algorithms Used
+##  Algorithms Used
 
 * **Linear Regression** (for priority prediction)
 * **Heuristic Sorting** (for schedule optimization)
 
----
-
-## ⚠️ Challenges Faced
+##  Challenges Faced
 
 * Handling Python import errors
 * Managing file paths
 * Debugging Streamlit rendering issues
 * Structuring the project properly
 
----
-
-## 🚀 Future Improvements
-
+##  Future Improvements
 * Calendar integration
 * Reminder notifications
 * Advanced ML models
 * Chatbot support
 
----
-
-## 📌 Conclusion
+##  Conclusion
 
 This project demonstrates how Artificial Intelligence can be used to improve productivity and decision-making in everyday life. It provides an effective and user-friendly way to plan studies efficiently.
-
----
-
-## 👤 Author
-
-**Akshat Singh**
-
----
-
-## 📜 License
-
-This project is for educational purposes.
