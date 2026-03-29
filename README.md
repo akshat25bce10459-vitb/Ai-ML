@@ -1,93 +1,82 @@
-# AI-Based Smart Study Planner
+# AI-Based Student Feedback Sentiment Analyzer
 
-##  Overview
+## Overview
 
-The **AI-Based Smart Study Planner** is a machine learning project designed to help students organize their study schedule efficiently. It predicts the priority of subjects based on their difficulty and deadlines, and generates an optimized study plan.
+This project is an AI-based system that analyzes student feedback using Natural Language Processing (NLP) and Machine Learning. It classifies feedback into sentiment categories (Positive, Negative, Neutral) and provides actionable suggestions for improvement.
 
-This project applies concepts from Artificial Intelligence and Machine Learning to solve a real-world problem of time management.
+## Features
 
-## Problem Statement
+* Sentiment classification using Machine Learning
+* Supports both:
 
-Students often struggle with:
-
-* Managing multiple subjects
-* Prioritizing difficult topics
-* Handling deadlines effectively
-
-This project provides an intelligent solution that automatically generates a study plan based on user inputs.
-
-##  Features
-* Input multiple subjects with difficulty and deadlines
-* Predict subject priority using Machine Learning
-* Generate optimized study schedule
-* Display results in sorted order
-* Visualize priorities using graphs
+  * Custom text input
+  * Predefined feedback options
+* Issue detection (Speed, Difficulty, Clarity)
+* Actionable suggestions
+* Automatic model training if not available
 
 ##  Technologies Used
 
 * Python
 * Pandas
 * Scikit-learn
-* Streamlit
-* Matplotlib
+* NLP (CountVectorizer)
+* Machine Learning (Naive Bayes)
 
-## Project Structure
+##  Project Structure
 
 ```
-Smart-Study-Planner/
+AIML PROJECTS/
 │
+├── data/
+│   └── feedback.csv
+├── train.py
 ├── app.py
-├── model.py
-├── planner.py
-├── student_data.csv
-├── requirements.txt
-└── README.md
-```
-##  Installation & Setup
-
- 1. Clone the Repository
-
-```
-git clone https://github.com/your-username/smart-study-planner.git
-cd smart-study-planner
+├── README.md
+├── report.pdf
+└── .gitignore
 ```
 
- 2. Install Dependencies
+##  How to Run
+
+ 1. Install dependencies
 
 ```
-pip install -r requirements.txt
+pip install pandas scikit-learn
 ```
 
- 3. Run the Application
+ 2. Run the application (put this in terminal)
 
 ```
-streamlit run app.py
+python app.py
 ```
+
+ The system will automatically train the model if it is not available.
+
+##  Example
+<img width="1057" height="748" alt="Screenshot 2026-03-28 190138" src="https://github.com/user-attachments/assets/05cea22e-778f-4147-a548-ba2080cf200b" />
+
+
+##  Applications
+
+* Student feedback analysis
+* Educational quality improvement
+* Basic NLP and ML demonstration
+
+##Concepts Covered
+
+* Natural Language Processing (NLP)
+* Machine Learning Classification
+* Naive Bayes Algorithm
+* Feature Extraction
+* Decision Systems
+
+## Future Improvements
+
+* Use advanced NLP techniques
+* Increase dataset size
+* Build GUI or web application
+* Improve model accuracy
+
 
 ---
-
-#Example
-<img width="322" height="809" alt="Screenshot 2026-03-28 210605" src="https://github.com/user-attachments/assets/d94e750a-6b34-45de-9450-1746b4585c26" />
-
-
-##  Algorithms Used
-
-* **Linear Regression** (for priority prediction)
-* **Heuristic Sorting** (for schedule optimization)
-
-##  Challenges Faced
-
-* Handling Python import errors
-* Managing file paths
-* Debugging Streamlit rendering issues
-* Structuring the project properly
-
-##  Future Improvements
-* Calendar integration
-* Reminder notifications
-* Advanced ML models
-* Chatbot support
-
-##  Conclusion
-
-This project demonstrates how Artificial Intelligence can be used to improve productivity and decision-making in everyday life. It provides an effective and user-friendly way to plan studies efficiently.
